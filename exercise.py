@@ -2,7 +2,7 @@ import mysql.connector
 
 
 con = mysql.connector.connect(
-    user=" ardit700_student",
+    user="ardit700_student",
     password="ardit700_student",
     host="108.167.140.122",
     database="ardit700_pm1database"
@@ -10,9 +10,9 @@ con = mysql.connector.connect(
 
 cursor = con.cursor()
 
-word = input("Enter a Word")
+word = input("Enter a Word: ")
 query = cursor.execute(
-    "select * FROM Dictionary WHERE expression = %s' " % word)
+    "select * FROM Dictionary WHERE expression = '%s' " % word)
 results = cursor.fetchall()
 
 
